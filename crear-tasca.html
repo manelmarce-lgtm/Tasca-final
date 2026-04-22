@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nova Tasca</title>
+    <link rel="stylesheet" href="css/style_tasca.css">
+</head>
+<body>
+    <h1>Crear Nova Tasca</h1>    
+    <form>
+        <label for="nom">Títol</label>
+        <input type="text" id="nom" placeholder="Títol">
+    
+        <label for="descripcio">Descripció</label>
+        <textarea id="descripcio" placeholder="Descripció"></textarea>
+    
+        <label for="data">Data</label>
+        <input type="date" id="data">
+    
+        <label for="categoria">Categoria</label>
+        <select id="categoria">
+            <option value="estudis">Estudis</option>
+            <option value="treball">Treball</option>
+            <option value="personal">Personal</option>
+        </select>
+    
+        <label for="prioritat">Prioritat</label>
+        <select id="prioritat">
+            <option value="Alta">Alta</option>
+            <option value="Mitjana">Mitjana</option>
+            <option value="Baixa">Baixa</option>
+        </select>
+    
+        <button type="button" class="btn-success" onclick="afegirTasques()">Crear tasca</button>
+    </form>
+    <script src="js/form-tasca.js"></script>
+</body>
+</html>
