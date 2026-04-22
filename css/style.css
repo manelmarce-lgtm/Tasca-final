@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 20%;         
+    width: 12%;         
     height: 100vh;      
     background: lightblue;
     padding: 2rem 1rem;
@@ -48,3 +48,30 @@ header {
     font-size: 2.4rem;
     color: black;
 }
+.card-test {
+    margin-left: 20rem;
+    width: 65%;
+    margin: 0px auto;
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  }
+  button.btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+    button.btn:hover {
+        background-color: darkblue;
+    }
+    input[type="text"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
