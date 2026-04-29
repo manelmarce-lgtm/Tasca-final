@@ -1,26 +1,15 @@
-let tasques = [];
-let filtreActiu = 'totes';
+let tasques = JSON.parse(localStorage.getItem("tasques")) || [];
 
-function createTask(text) {
-    return {
-        id: Date.now(),
-        text: text,
-        completada: false
-    };
-}
 function addTask() {
-    const input = document.getElementById('inputTasca');
-    const textTasca = input.value.trim();
+    const titol = document.getElementById("nom").value.trim();
+    const descripcio = document.getElementById("descripcio").value.trim();
+    const data = document.getElementById("data").value;
+    const categoria = document.getElementById("categoria").value;
+    const prioritat = document.getElementById("prioritat").value;
 
-    if (textTasca === '') {
-        alert('Escriu una tasca!');
+    // Validam que el titol no estigui buit.
+    if (titol === "") {
+        alert("El títol és obligatori");
         return;
     }
-
-    const novaTasca = createTask(textTasca);
-    tasques.push(novaTasca);
-
-    input.value = '';
-    showTasks();
-    updateStatistics();
 }
