@@ -1,20 +1,18 @@
 let categories = JSON.parse(localStorage.getItem("categories")) || [];
 function addCategory() {
-    const nom = document.getElementById("nom").value.trim();
-    const color = document.getElementById("color").value;
+    
+    const nom = document.getElementById("novaCategoria").value.trim(); 
+    const color = document.getElementById("colorCategoria").value;
 
     if (nom === "") {
-        alert("El nom de la categoria no pot estar buit. Si us plau, introdueix un nom vàlid.");
+        alert("El nom de la categoria no pot estar buit.");
         return;
     }
-    const novaCategoria = {
-        nom: nom,
-        color: color
-    };
+    const novaCategoria = { nom: nom, color: color };
     categories.push(novaCategoria);
     localStorage.setItem("categories", JSON.stringify(categories));
+    
     document.getElementById("novaCategoria").value = "";
-    paintCategories();
 }
 function paintCategories() {
     const llista = document.getElementById("llistaCategories");
