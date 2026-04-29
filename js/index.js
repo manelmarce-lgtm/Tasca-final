@@ -36,5 +36,13 @@ function marcarCompletada(id) {
     localStorage.setItem("tasques", JSON.stringify(tasques));
     carregarTasques();
 }
+function eliminarTasca(id) {
+    let tasques = JSON.parse(localStorage.getItem("tasques")) || [];
+
+    tasques = tasques.filter(t => t.id !== id);
+
+    localStorage.setItem("tasques", JSON.stringify(tasques));
+    carregarTasques();
+}
 
 carregarTasques();
