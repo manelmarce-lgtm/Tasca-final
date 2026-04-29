@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Categories</title>
+    <link rel="stylesheet" href="css/style_categories.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<nav class="sidebar">
+    <h2 class="nav-title">Menu</h2>
+    <ul class="nav-list">
+        <li><a href="index.html">Llistat d´activitats</a></li>
+        <li><a href="crear-tasca.html">Crear Tasca</a></li>
+        <li><a href="categories.html">Categories</a></li>
+    </ul>
+</nav>
+<body>
+    <h1>Crear Categories</h1>
+<input type="text" id="novaCategoria" placeholder="Nom de la categoria">
+<button onclick="addCategory()">Afegir categoria</button>
+
+<ul id="llistaCategories"></ul>
+</body>
+<script src="js/categories.js"></script>
