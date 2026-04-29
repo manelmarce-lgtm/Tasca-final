@@ -7,24 +7,29 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/categories.css">
 </head>
-<nav class="sidebar">
-    <h2 class="nav-title">Menu</h2>
-    <ul class="nav-list">
-        <li><a href="index.html">Llistat d´activitats</a></li>
-        <li><a href="crear-tasca.html">Crear Tasca</a></li>
-        <li><a href="categories.html">Categories</a></li>
-    </ul>
-</nav>
 <body>
-    <h1>Crear Categories</h1>
-    <form id="categoryForm">
+    <nav class="sidebar">
+        <h2 class="nav-title">Menu</h2>
+        <ul class="nav-list">
+            <li><a href="index.html">Llistat d´activitats</a></li>
+            <li><a href="crear-tasca.html">Crear Tasca</a></li>
+            <li><a href="categories.html">Categories</a></li>
+        </ul>
+    </nav>
 
-        <label>Nom de la categoria:</label>
-        <input type="text" id="novaCategoria" placeholder="Nom de la categoria">
-        <label>Color de la categoria:</label>
-        <input type="color" id="colorCategoria" value="#000000">
-        <button type="button" class="btn-success" onclick="addCategory()">Afegir categoria</button>
-        
-    </form>
+    <main style="margin-left: 220px; padding: 20px;">
+        <h1>Crear Categories</h1>
+        <form id="categoryForm">
+            <label>Nom de la categoria:</label>
+            <input type="text" id="novaCategoria" placeholder="Nom de la categoria">
+            <label>Color de la categoria:</label>
+            <input type="color" id="colorCategoria" value="#000000">
+            <button type="button" class="btn-success" onclick="addCategory()">Afegir categoria</button>
+        </form>
+        <h2>Categories existents</h2>
+        <ul id="llistaCategories"></ul>
+    </main>
+
+    <script src="js/categories.js"></script>
 </body>
-<script src="js/categories.js"></script>
+</html>
