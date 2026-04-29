@@ -1,0 +1,36 @@
+body {
+    background: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 40rem;
+}
+
+
+.btn-success {
+    background-color: #3498db;
+    color: white;
+    margin-top: 20px;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    transition: 0.2s ease;
+    width: 100%;
+}
+
+.btn-success:hover {
+    background-color: #0b69a8;
+}
