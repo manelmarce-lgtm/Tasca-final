@@ -6,6 +6,7 @@ function addTask() {
     const data = document.getElementById("data").value;
     const categoria = document.getElementById("categoria").value;
     const prioritat = document.getElementById("prioritat").value;
+    const colorCategoria = select.options[select.selectedIndex].dataset.color;
 
     // Validam que el titol no estigui buit.
     if (titol === "" || descripcio === "" || data === "" || categoria === "" || prioritat === "") {
@@ -18,6 +19,7 @@ function addTask() {
         descripcio: descripcio,
         data: data,
         categoria: categoria,
+        color: colorCategoria,
         prioritat: prioritat,
         completada: false
     };
@@ -27,4 +29,32 @@ function addTask() {
     alert("La tasca s´ha creat correctament!");
     window.location.href = "index.html";
 }
+function carregarCategories() {
+    const categories = JSON.parse(localStorage.getItem("categories")) || [];
+    const select = document.getElementById("categoria");
+    select.innerHTML = "";
+    categories.forEach(cat => {
+        const option = document.createElement("option");
+        option.value = cat.nom;
+        option.dataset.color = cat.color; 
+        option.textContent = cat.nom;
+        select.appendChild(option);
+    });
+//Funcions per default
+if (categories.length === 0) {
+    const perDefecte = [
+        { nom: "Estudis", color: "#2196F3" },
+        { nom: "Treball", color: "#4CAF50" },
+        { nom: "Personal", color: "#FF9800" }
+    ];
+    perDefecte.forEach(cat => {
+        const option = document.createElement("option");
+        option.value = cat.nom;
+        option.dataset.color = cat.color;
+        option.textContent = cat.nom;
+        select.appendChild(option);
+    });
+}
+}
 
+carregarCategories();
