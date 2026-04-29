@@ -25,5 +25,16 @@ function carregarTasques() {
 
     llista.innerHTML = html;
 }
+function marcarCompletada(id) {
+    let tasques = JSON.parse(localStorage.getItem("tasques")) || [];
+
+    tasques = tasques.map(t => {
+        if (t.id === id) t.completada = !t.completada;
+        return t;
+    });
+
+    localStorage.setItem("tasques", JSON.stringify(tasques));
+    carregarTasques();
+}
 
 carregarTasques();
