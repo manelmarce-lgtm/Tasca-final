@@ -1,18 +1,21 @@
 let tasques = JSON.parse(localStorage.getItem("tasques")) || [];
 
 function addTask() {
-    const select = document.getElementById("categoria");
-    const colorCategoria = select.options[select.selectedIndex]?.dataset.color || "#000000";
     const titol = document.getElementById("nom").value.trim();
     const descripcio = document.getElementById("descripcio").value.trim();
     const data = document.getElementById("data").value;
-    const categoria = document.getElementById("categoria").value;
+    const selectCategoria = document.getElementById("categoria");
+    const categoria = selectCategoria.value;
     const prioritat = document.getElementById("prioritat").value;
     
+    const colorCategoria = selectCategoria.options[selectCategoria.selectedIndex]?.dataset.color || "#ccc";
 
-    // Validam que el titol no estigui buit.
     if (titol === "" || descripcio === "" || data === "" || categoria === "" || prioritat === "") {
-        alert("Tots els camps són obligatoris. Si us plau, completa'ls abans de crear la tasca.");
+        alert("Tots els camps són obligatoris.");
+        return;
+    }
+    if (new Date(data) < new Date()) {
+        alert("La data no pot ser anterior a l'actual.");
         return;
     }
     const novaTasca = {
@@ -25,38 +28,36 @@ function addTask() {
         prioritat: prioritat,
         completada: false
     };
+
     tasques.push(novaTasca);
     localStorage.setItem("tasques", JSON.stringify(tasques));
 
-    alert("La tasca s´ha creat correctament!");
+    alert("La tasca s'ha creat correctament!");
     window.location.href = "index.html";
 }
+
 function carregarCategories() {
     const categories = JSON.parse(localStorage.getItem("categories")) || [];
     const select = document.getElementById("categoria");
+    if (!select) return;
+
     select.innerHTML = "";
-    categories.forEach(cat => {
-        const option = document.createElement("option");
-        option.value = cat.nom;
-        option.dataset.color = cat.color; 
-        option.textContent = cat.nom;
-        select.appendChild(option);
-    });
-//Funcions per default
-if (categories.length === 0) {
-    const perDefecte = [
-        { nom: "Estudis", color: "#2196F3" },
-        { nom: "Treball", color: "#4CAF50" },
-        { nom: "Personal", color: "#FF9800" }
+
+    //usem les de defecte i les afegides per l'usuari
+    const categoriesDefecte = [
+        { nom: "Treball", color: "#3498db" },
+        { nom: "Personal", color: "#e67e22" },
+        { nom: "Estudis", color: "#e74c3c" }
     ];
-    perDefecte.forEach(cat => {
+    const llistaAMostrar = [...categoriesDefecte, ...categories];
+
+    llistaAMostrar.forEach(cat => {
         const option = document.createElement("option");
         option.value = cat.nom;
         option.dataset.color = cat.color;
         option.textContent = cat.nom;
         select.appendChild(option);
     });
-}
 }
 
 carregarCategories();

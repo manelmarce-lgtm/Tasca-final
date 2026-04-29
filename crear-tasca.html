@@ -6,6 +6,7 @@
     <title>Crear Nova Tasca</title>
     <link rel="stylesheet" href="css/style_tasca.css">
 </head>
+<body>
     <nav class="sidebar">
         <h2 class="nav-title">Menu</h2>
         <ul class="nav-list">
@@ -14,30 +15,32 @@
             <li><a href="categories.html">Categories</a></li>
         </ul>
     </nav>
-<body>
-    <h1>Crear Nova Tasca</h1>    
-    <form>
-        <label for="nom">Títol</label>
-        <input type="text" id="nom" placeholder="Títol">
-    
-        <label for="descripcio">Descripció</label>
-        <textarea id="descripcio" placeholder="Descripció"></textarea>
-    
-        <label for="data">Data</label>
-        <input type="date" id="data">
-    
-        <label for="categoria">Categoria</label>
-        <select id="categoria"></select>
 
-        <label for="prioritat">Prioritat</label>
-        <select id="prioritat">
-            <option value="Alta">Alta</option>
-            <option value="Mitjana">Mitjana</option>
-            <option value="Baixa">Baixa</option>
-        </select>
-    
-        <button type="button" class="btn-success" onclick="addTask()">Crear tasca</button>
-    </form>
+    <main style="margin-left: 220px; padding: 20px;">
+        <h1>Crear Nova Tasca</h1>    
+        <form>
+            <label for="nom">Títol</label>
+            <input type="text" id="nom" placeholder="Títol">
+        
+            <label for="descripcio">Descripció</label>
+            <textarea id="descripcio" placeholder="Descripció"></textarea>
+        
+            <label for="data">Data</label>
+            <input type="date" id="data">
+        
+            <label for="categoria">Categoria</label>
+            <select id="categoria"></select>
+
+            <label for="prioritat">Prioritat</label>
+            <select id="prioritat">
+                <option value="Alta">Alta</option>
+                <option value="Mitjana">Mitjana</option>
+                <option value="Baixa">Baixa</option>
+            </select>
+        
+            <button type="button" class="btn-success" onclick="addTask()">Crear tasca</button>
+        </form>
+    </main>
     <script src="js/form-tasca.js"></script>
 </body>
 </html>
