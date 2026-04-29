@@ -24,13 +24,24 @@
 </nav>
 <div class="card-test">
     <div style="display:flex; justify-content:space-between; align-items:center;">
-      <button class="btn">Crear tasca</button>
-      <form class="nom-archiu">
-        <input type="text" placeholder="nom de l'arxiu...">       
-        <button class="btn" type="submit">Pujar</button>
-      </form>
+        <input id="inputTasca" type="text" placeholder="Escriu una tasca..." class="input-tasca">
+        <button class="btn" onclick="afegirTasca()">Afegir</button>
     </div>
-  </div>
+</div>
+
+<!-- Filtres -->
+<div class="filtres">
+    <button class="boto-filtre actiu" onclick="filtrarTasques('totes', event)">Totes</button>
+    <button class="boto-filtre" onclick="filtrarTasques('pendents', event)">Pendents</button>
+    <button class="boto-filtre" onclick="filtrarTasques('completades', event)">Completades</button>
+</div>
+
+<h2 class="card-title">Llista de tasques</h2>
+
+<ul id="llistaTasques" class="llista-tasques"></ul>
+
+<p id="estadistiques" class="estadistiques"></p>
+
 <h2 class="card-title">Tasques pendents</h2>
 
 <h2 class="card-title">Tasques finalitzades</h2>
