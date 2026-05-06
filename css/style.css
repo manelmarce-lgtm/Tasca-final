@@ -81,7 +81,7 @@ body {
     button.btn:hover {
         background-color: darkblue;
     }
-    input[type="text"] {
+    input[type="text"], input[type="file"] {
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
