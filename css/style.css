@@ -81,6 +81,11 @@ body {
     button.btn:hover {
         background-color: darkblue;
     }
+    #deleteAllTasksBtn {
+        margin-left: 12.5rem;
+        background-color: red;
+        margin-top: 20px;
+    }
     input[type="text"], input[type="file"] {
         padding: 10px;
         border: 1px solid #ccc;
@@ -102,5 +107,51 @@ body {
         max-width: 700px;
         margin: 0 auto;
         padding: 20px;
+    }
+
+    .tasca {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 18px 22px;
+        margin-bottom: 18px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .tasca-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+    }
+
+    .tasca h3 {
+        margin: 0;
+        font-size: 1.3rem;
+        color: #1f3a5d;
+    }
+
+    .categoria-pastilla {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 14px;
+        border-radius: 999px;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.95rem;
+        min-width: 96px;
+        text-align: center;
+    }
+
+    .tasca p {
+        margin: 0.35rem 0;
+        line-height: 1.5;
+    }
+
+    .tasca button.btn {
+        margin-top: 14px;
     }
     
