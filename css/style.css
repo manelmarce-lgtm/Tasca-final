@@ -118,6 +118,11 @@ body {
         border: 1px solid rgba(0, 0, 0, 0.05);
     }
 
+    .tasca.completada {
+        background: #f2f7f2;
+        opacity: 0.95;
+    }
+
     .tasca-header {
         display: flex;
         align-items: center;
@@ -125,6 +130,13 @@ body {
         gap: 1rem;
         flex-wrap: wrap;
         margin-bottom: 12px;
+    }
+
+    .tasca-accions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 14px;
     }
 
     .tasca h3 {
