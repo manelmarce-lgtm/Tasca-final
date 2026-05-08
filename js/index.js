@@ -1,3 +1,5 @@
+import "./grafics.js";
+import { crearGraficaTasques } from "./grafics.js";
 function crearTascaCard(tasca, completada) {
     const categoriaNom = typeof tasca.categoria === "object" ? tasca.categoria.nom : tasca.categoria || "Sense categoria";
     const categoriaColor = tasca.color || (typeof tasca.categoria === "object" ? tasca.categoria.color : "#999");
@@ -70,6 +72,8 @@ function carregarTasques() {
             finalitzadesContainer.appendChild(crearTascaCard(tasca, true));
         });
     }
+    
+    actualitzarGrafic();
 }
 
 function actualitzarEstatTasca(id, completada) {
@@ -135,8 +139,30 @@ function deleteAllTasks() {
     }
 }
 
-// Manejar la pujada de tasques des d'un fitxer JSON
 document.getElementById("fileInput").addEventListener("change", function(event) {
     const file = event.target.files[0];
     if (!file) return;
+    addTaskFromFile(file);
 });
+
+
+function actualitzarGrafic() {
+    const mesos = ["Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre"];
+    const tasques = JSON.parse(localStorage.getItem("tasques")) || [];
+    const tasquesCompletades = tasques.filter(t => t.completada);
+    
+    const dadesPerMes = tasquesCompletades.reduce((acc, tasca) => {
+        const data = new Date(tasca.data);
+        const mes = data.getMonth();
+        acc[mesos[mes]] = (acc[mesos[mes]] || 0) + 1;
+        return acc;
+    }, {Gener: 0, Febrer: 0, Març: 0, Abril: 0, Maig: 0, Juny: 0, Juliol: 0, Agost: 0, Setembre: 0, Octubre: 0, Novembre: 0, Desembre: 0});
+    
+    const canvas = document.getElementById("tasquesChart");
+    if (canvas) {
+        crearGraficaTasques(canvas, dadesPerMes);
+    }
+}
+
+window.deleteAllTasks = deleteAllTasks;
+window.addTaskFromFile = addTaskFromFile;

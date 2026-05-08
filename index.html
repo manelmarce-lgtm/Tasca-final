@@ -26,7 +26,6 @@
       <button class="btn"><a href="crear-tasca.html">Crear Tasca</a></button>
       <form class="nom-archiu">
         <input type="file" id="fileInput" accept=".json" placeholder="Selecciona un fitxer JSON">       
-        <button class="btn" type="button" onclick="addTaskFromFile(document.getElementById('fileInput').files[0])">Pujar</button>
       </form>
     </div>
   </div>
@@ -39,6 +38,11 @@
     <div id="llistaTasquesFinalitzades"></div>
 </div>
 <button class="btn" id="deleteAllTasksBtn" onclick="deleteAllTasks()">Eliminar Totes les Tasques</button>
-<script src="js/index.js"></script>
+<h2 class="card-title">Gràfic de Tasques per Mes</h2>
+<div style="max-width: 600px; margin: 20px auto;">
+    <canvas id="tasquesChart"></canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/index.js" type="module"></script>
 </body>
 </html>
