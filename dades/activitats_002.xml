@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activitats xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="activitats.xsd">
+  <activitat>
+    <id>task-006</id>
+    <titol>Afegir importació amb fetch</titol>
+    <descripcio>Carrega activitats externes sense duplicats.</descripcio>
+    <data>2025-04-22</data>
+    <categoria>
+      <nom>Dades</nom>
+      <color>#81ecec</color>
+    </categoria>
+    <prioritat>Mitjana</prioritat>
+    <realitzada>false</realitzada>
+  </activitat>
+  <activitat>
+    <id>task-007</id>
+    <titol>Gestió de categories a categories.html</titol>
+    <descripcio>Permet afegir i eliminar categories.</descripcio>
+    <data>2025-04-24</data>
+    <categoria>
+      <nom>Funcionalitat</nom>
+      <color>#00cec9</color>
+    </categoria>
+    <prioritat>Mitjana</prioritat>
+    <realitzada>false</realitzada>
+  </activitat>
+  <activitat>
+    <id>task-008</id>
+    <titol>Separa el projecte en mòduls JavaScript</titol>
+    <descripcio>Distribueix la lògica en fitxers com storage.js, models.js...</descripcio>
+    <data>2025-04-26</data>
+    <categoria>
+      <nom>Codi net</nom>
+      <color>#55efc4</color>
+    </categoria>
+    <prioritat>Alta</prioritat>
+    <realitzada>false</realitzada>
+  </activitat>
+  <activitat>
+    <id>task-009</id>
+    <titol>Aplica estils amb CSS</titol>
+    <descripcio>Fes que la interfície sigui usable i atractiva.</descripcio>
+    <data>2025-04-28</data>
+    <categoria>
+      <nom>Disseny</nom>
+      <color>#e5989b</color>
+    </categoria>
+    <prioritat>Baixa</prioritat>
+    <realitzada>false</realitzada>
+  </activitat>
+  <activitat>
+    <id>task-010</id>
+    <titol>Revisa, prova i entrega el projecte</titol>
+    <descripcio>Assegura't que tot funciona i que el codi està ordenat.</descripcio>
+    <data>2025-04-30</data>
+    <categoria>
+      <nom>Finalització</nom>
+      <color>#636e72</color>
+    </categoria>
+    <prioritat>Alta</prioritat>
+    <realitzada>false</realitzada>
+  </activitat>
+</activitats>
